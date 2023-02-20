@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="acWorkStation" prefHeight="700.0" prefWidth="1052.0" style="-fx-background-color: #d3d3d3;" stylesheets="@../styles/CenterScreen.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <AnchorPane prefHeight="27.0" prefWidth="1100.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator prefWidth="200.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-41.0" layoutY="-62.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@../images/ic_launcher1.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnTerminate" mnemonicParsing="false" AnchorPane.rightAnchor="0.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TIMES" />
+                           </graphic>
+                        </Button>
+                        <Label fx:id="lblImageGallery" layoutX="31.0" layoutY="5.0" text="Image Gallery" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblImagePreview" layoutX="123.0" layoutY="5.0" prefHeight="15.0" prefWidth="422.0" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <bottom>
+                  <AnchorPane minHeight="125.0" prefHeight="125.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <ScrollPane fx:id="scrollpane" layoutX="93.0" prefHeight="125.0" prefWidth="912.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </bottom>
+               <left>
+                  <AnchorPane prefHeight="549.0" prefWidth="95.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="95.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </right>
+               <center>
+                  <BorderPane prefHeight="548.0" prefWidth="776.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <AnchorPane fx:id="centerPane" prefHeight="472.0" prefWidth="862.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <StackPane prefHeight="68.0" prefWidth="862.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane prefHeight="53.0" prefWidth="862.0">
+                                 <children>
+                                    <JFXButton fx:id="btnImagePrevious" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="206.0" layoutY="26.0" prefHeight="60.0" text="Image Previous" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="10.0">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="ARROW_LEFT" size="30" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnImageNext" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="431.0" layoutY="26.0" maxHeight="60.0" minWidth="97.0" prefHeight="60.0" text="Image Next" AnchorPane.rightAnchor="335.0" AnchorPane.topAnchor="10.0">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="ARROW_RIGHT" size="30" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
+                     </bottom>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import impl.org.controlsfx.skin.DecorationPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<AnchorPane fx:id="acMain" prefHeight="438.0" prefWidth="500.0" stylesheets="@../styles/parameter.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutY="3.3" prefHeight="360.0" prefWidth="499.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="360.0" prefWidth="526.0">
+               <top>
+                  <AnchorPane prefHeight="30.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="3.0">
+                           <image>
+                              <Image url="@../images/ic_launcher1.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblTitle" layoutX="5.0" layoutY="4.0" text="Documents Update" textFill="WHITE" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnExit" layoutX="1.0" layoutY="3.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="21.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="8.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fx:id="glyphExit" glyphName="TIMES" />
+                           </graphic>
+                        </Button>
+                        <Separator layoutY="26.0" prefHeight="0.0" prefWidth="747.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane fx:id="anchorField" minHeight="330.0" prefHeight="330.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="4.0" layoutY="5.0" minWidth="382.0" prefHeight="341.0" prefWidth="411.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="29.0" layoutY="147.0" prefHeight="239.0" prefWidth="350.0" stylesheets="@../styles/Table.css" />
+                           </children>
+                        </AnchorPane>
+                        <GridPane layoutX="29.0" layoutY="31.0" prefHeight="117.0" prefWidth="358.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <CustomTextField fx:id="txtField00" editable="false" GridPane.columnIndex="3" GridPane.columnSpan="2" />
+                              <CustomTextField fx:id="txtField01" editable="false" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtField02" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                              <Label text="File Code:" GridPane.columnIndex="1" />
+                              <Label text="Barcode:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="No. of Pages:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <right>
+                  <AnchorPane prefHeight="429.0" prefWidth="80.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator layoutX="73.0" layoutY="120.0" minWidth="1.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
+                        <DecorationPane opacity="0.13" prefHeight="463.0" prefWidth="80.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button fx:id="btnCancel" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="194.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="Cancel" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="REMOVE" size="25" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnOkay" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="OK" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CHECK" size="25" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

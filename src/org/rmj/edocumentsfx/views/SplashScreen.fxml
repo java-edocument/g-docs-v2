@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rmj.edocumentsfx.views.SplashScreenController">
+   <children>
+      <Pane layoutX="14.0" layoutY="23.0" prefHeight="299.0" prefWidth="570.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Line endX="462.0" layoutX="104.0" layoutY="365.0" startX="-100.0" stroke="ORANGE" strokeWidth="5.0" />
+            <Line endX="300.0" layoutX="-33.0" layoutY="202.0" rotate="-90.3" startX="-101.0" stroke="ORANGE" strokeWidth="5.0" />
+            <Label layoutX="130.0" layoutY="46.0" prefHeight="73.0" prefWidth="381.0" text="Guazon Edocs" textFill="#f8f4f4">
+               <font>
+                  <Font name="ACaslonPro-Semibold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="153.0" layoutY="115.0" text="Version V.2" textFill="#fcf2f2">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="422.0" layoutY="380.0" text="Copyright © GGC-SEG 2020" textFill="#f8f8f8">
+               <font>
+                  <Font name="Cambria" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="258.0" layoutY="239.0" prefHeight="112.0" prefWidth="299.0" text="All rights reserved. No part of this software may be reproduced or transmitted in any form or by any means, electronic or mechanical, including recording, or by information storage and retrieval systems without prior written permission from the authors." textFill="#f8f8f8" wrapText="true">
+               <font>
+                  <Font name="Cambria" size="12.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

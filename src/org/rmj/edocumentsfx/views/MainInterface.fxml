@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="700.0" prefWidth="1024.0" stylesheets="@../styles/CenterScreen.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="80.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="57.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <AnchorPane fx:id="acTiltleBar" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0">
+                           <image>
+                              <Image url="@../images/ic_launcher1.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="EDocuments Fx. V1" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="6.0" />
+                        <Button fx:id="btnMinimize" mnemonicParsing="false" AnchorPane.rightAnchor="58.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="MINUS" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Minimize" />
+                           </tooltip>
+                        </Button>
+                        <ToggleButton fx:id="btnRestoreDown" mnemonicParsing="false" AnchorPane.rightAnchor="28.0">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="faCompress" glyphName="COMPRESS" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip fx:id="tpRestore" text="Restore Down" />
+                           </tooltip>
+                        </ToggleButton>
+                        <Button fx:id="btnClose" mnemonicParsing="false" AnchorPane.rightAnchor="0.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TIMES" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Close" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <MenuBar fx:id="mnuBar" prefHeight="25.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="FOLDER" size="15" />
+                                 </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="EDIT" size="15" />
+                                 </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                    <MenuItem fx:id="mnuBug" mnemonicParsing="false" text="Report a Bug">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="BUG" />
+                                       </graphic></MenuItem>
+                                <MenuItem fx:id="mnuAbout" mnemonicParsing="false" text="About">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="QUESTION_CIRCLE" />
+                                       </graphic></MenuItem>
+                              </items>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="INFO_CIRCLE" size="15" />
+                                 </graphic>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="Settings">
+                                <items>
+                                    <Menu mnemonicParsing="false" text="Theme">
+                                       <items>
+                                          <CheckMenuItem mnemonicParsing="false" text="Light" />
+                                          <CheckMenuItem mnemonicParsing="false" text="Classic" />
+                                          <CheckMenuItem mnemonicParsing="false" text="Dark" />
+                                       </items>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="PAINT_BRUSH" />
+                                       </graphic>
+                                    </Menu>
+                                </items>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="GEARS" size="15" />
+                                 </graphic>
+                              </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane layoutY="32.0" maxHeight="57.0" minHeight="28.0" prefHeight="30.0" prefWidth="1024.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Button fx:id="btnNavigation" layoutX="14.0" layoutY="6.0" minHeight="30.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="faNavigation" glyphName="BARS" size="20" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <StackPane prefHeight="643.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane fx:id="splPane" dividerPositions="0.2055" prefHeight="160.0" prefWidth="200.0">
+                     <items>
+                        <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="605.0" prefWidth="244.0" SplitPane.resizableWithParent="false">
+                           <children>
+                              <AnchorPane layoutY="-62.0" prefHeight="30.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="btnNavClose" layoutX="195.0" layoutY="12.0" mnemonicParsing="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="SORT_DOWN" size="15" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="lblNavigation" layoutX="4.0" layoutY="6.0" prefHeight="18.0" prefWidth="93.0" text="Navigation" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="6.0" />
+                              <CustomTextField fx:id="txtField00" layoutX="2.0" layoutY="30.0" prefHeight="25.0" promptText="Search" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0" />
+                              <TreeView fx:id="treeView" layoutY="61.0" prefHeight="541.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+                              <AnchorPane layoutX="10.0" layoutY="111.0" prefHeight="131.0" prefWidth="165.0" AnchorPane.bottomAnchor="30.0">
+                                 <children>
+                                    <Label fx:id="lblTime" alignment="CENTER" layoutY="21.0" prefHeight="79.0" prefWidth="161.0" text="04:30" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+                                       <font>
+                                          <Font size="60.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Label>
+                                    <Label fx:id="lblDate" alignment="CENTER" layoutX="2.0" layoutY="95.0" text="November 11, 2018" textFill="WHITE" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="98.0">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Label>
+                                    <Label fx:id="lblDay" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="21.0" prefHeight="17.0" prefWidth="113.0" text="Saturday" textFill="WHITE" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="21.0">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Label>
+                                    <Label fx:id="lblSeconds" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="143.0" layoutY="84.0" prefHeight="17.0" prefWidth="16.0" text="59" textFill="WHITE">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Label>
+                                    <Separator layoutX="10.0" layoutY="118.0" prefHeight="0.0" prefWidth="181.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="605.0" prefWidth="765.0">
+                           <children>
+                              <AnchorPane prefHeight="30.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Separator layoutX="22.0" layoutY="15.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <HBox layoutX="-22.0" layoutY="-32.0" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #f37024;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="btnHome" minHeight="20.0" mnemonicParsing="false" prefHeight="24.0">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="HOME" size="20" />
+                                             </graphic>
+                                          </Button>
+                                          <Label fx:id="lblfirstLevel">
+                                             <HBox.margin>
+                                                <Insets top="5.0" />
+                                             </HBox.margin></Label>
+                                          <Label fx:id="lblSecondLevel">
+                                             <HBox.margin>
+                                                <Insets top="5.0" />
+                                             </HBox.margin></Label>
+                                       </children>
+                                       <padding>
+                                          <Insets top="3.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="centerbg" stylesheets="@../styles/CenterScreen.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <children>
+                                    <AnchorPane fx:id="acWorkStation" prefHeight="553.0" prefWidth="811.0" StackPane.alignment="CENTER" />
+                                 </children></StackPane>
+                           </children></AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <StackPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37024;">
+                     <children>
+                        <Separator minHeight="1.0" prefHeight="1.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                        <Label fx:id="lblBranch" alignment="CENTER" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="5.0" text="Welcome" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="9.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblUser" layoutX="95.0" layoutY="5.0" prefHeight="17.0" prefWidth="942.0" text="Label" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="9.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
