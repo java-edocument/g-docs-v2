@@ -48,7 +48,7 @@ import org.rmj.appdriver.agentfx.CommonUtils;
 import org.rmj.appdriver.agentfx.ShowMessageFX;
 import org.rmj.appdriver.constants.EditMode;
 import org.rmj.edocumentsfx.utilities.Utilities;
-import org.rmj.edocx.trans.agentFX.XMEDocumentsMulti;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
 
 public class RegistrationExpenseController implements Initializable {
@@ -100,7 +100,7 @@ public class RegistrationExpenseController implements Initializable {
     private String psOldRec;
     private ObservableList<TableWithCheckBoxModel> items = FXCollections.observableArrayList();
     private ObservableList<ComboTableModel> comboItem = FXCollections.observableArrayList();
-    private XMEDocumentsMulti poTrans;
+    private DocumentsMulti poTrans;
     private RegistrationExpenseSelectorController loRegistrationSelector;
     private RegistrationExpenseSelectorRegisterController loMultipleDocsReg;
     
@@ -281,7 +281,7 @@ public class RegistrationExpenseController implements Initializable {
             }
     }
     
-    public void setClass(XMEDocumentsMulti foTrans){
+    public void setClass(DocumentsMulti foTrans){
         this.poTrans= foTrans;
     }
      
@@ -947,6 +947,10 @@ public class RegistrationExpenseController implements Initializable {
      
     public void reloadImage(int fnRow){
         try{
+            
+            if (fnRow >= psList.size()){
+                fnRow = fnRow - 1;
+            }
             if(loadImage(psList.get(fnRow))==true){
                 setTableFocus(pos);
                 cmbSetFocus(fnRow);

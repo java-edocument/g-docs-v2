@@ -49,7 +49,7 @@ import org.rmj.appdriver.agentfx.CommonUtils;
 import org.rmj.appdriver.agentfx.ShowMessageFX;
 import org.rmj.appdriver.constants.EditMode;
 import org.rmj.edocumentsfx.utilities.Utilities;
-import org.rmj.edocx.trans.agentFX.XMEDocumentsMulti;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
 /**
  * FXML Controller class
@@ -107,7 +107,7 @@ public class MCRegistrationController implements Initializable {
     private int pnRowTable= -1;
     private ObservableList<TableWithCheckBoxModel> items = FXCollections.observableArrayList();
     private ObservableList<ComboTableModel> comboItem = FXCollections.observableArrayList();
-    private XMEDocumentsMulti poTrans;
+    private DocumentsMulti poTrans;
     private MCRegistrationSelectorController loCrDocs;
     private MCRegistrationSelectorRegisterController loMultipleDocsReg;
     
@@ -286,7 +286,7 @@ public class MCRegistrationController implements Initializable {
         return comboItem;
     }
     
-    public void setClass(XMEDocumentsMulti foTrans){
+    public void setClass(DocumentsMulti foTrans){
         this.poTrans= foTrans;
     }
      
@@ -999,6 +999,9 @@ public class MCRegistrationController implements Initializable {
      
     public void reloadImage(int fnRow){
         try{
+            if (fnRow >= psList.size()){
+                fnRow = fnRow - 1;
+            }
             if(loadImage(psList.get(fnRow))==true){
                 setTableFocus(pos);
                 cmbSetFocus(fnRow);

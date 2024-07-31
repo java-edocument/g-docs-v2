@@ -1,7 +1,6 @@
 
 package org.rmj.edocumentsfx.views;
 
-import com.fujitsu.pfu.fiscn.sdk.FiscnException;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -47,7 +46,7 @@ import org.rmj.appdriver.GRider;
 import org.rmj.appdriver.agentfx.CommonUtils;
 import org.rmj.appdriver.agentfx.ShowMessageFX;
 import org.rmj.appdriver.constants.EditMode;
-import org.rmj.edocx.trans.agentFX.XMEDocumentsMulti;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
 
 public class MultipleDocsSelectionRegisterController implements Initializable {
@@ -86,7 +85,7 @@ public class MultipleDocsSelectionRegisterController implements Initializable {
     private int pnEditMode = -1;
     private Integer pnIndex = -1;
     private int pnRowTable = 0;
-    private XMEDocumentsMulti poTrans;
+    private DocumentsMulti poTrans;
     private static GRider poGRider;
     private String psBranchCd = "";
     private String psFileName = "";
@@ -123,11 +122,8 @@ public class MultipleDocsSelectionRegisterController implements Initializable {
             
             if (psBranchCd.equals("")) psBranchCd = poGRider.getBranchCode();
             
-            try {
-                poTrans = new XMEDocumentsMulti(poGRider ,psBranchCd, false);
-            } catch (FiscnException ex) {
-                Logger.getLogger(CRDocsController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            poTrans = new DocumentsMulti(poGRider ,psBranchCd, false);
+                
             pxeCurrentDate = poGRider.getServerDate();
             if (psDefaultPath.equals("")) psDefaultPath = poTrans.getDefaultPath();
             

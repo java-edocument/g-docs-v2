@@ -49,7 +49,7 @@ import org.rmj.appdriver.agentfx.CommonUtils;
 import org.rmj.appdriver.agentfx.ShowMessageFX;
 import org.rmj.appdriver.constants.EditMode;
 import org.rmj.edocumentsfx.utilities.Utilities;
-import org.rmj.edocx.trans.agentFX.XMEDocumentsMulti;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
 
 public class MultipleDocsScannerController implements Initializable {
@@ -106,7 +106,7 @@ public class MultipleDocsScannerController implements Initializable {
     private int pnRowTable= -1;
     private ObservableList<TableWithCheckBoxModel> items = FXCollections.observableArrayList();
     private ObservableList<ComboTableModel> comboItem = FXCollections.observableArrayList();
-    private XMEDocumentsMulti poTrans;
+    private DocumentsMulti poTrans;
     private MultipleDocsSelectionController loCrDocs;
     private MultipleDocsSelectionRegisterController loMultipleDocsReg;
     
@@ -277,7 +277,7 @@ public class MultipleDocsScannerController implements Initializable {
             }
     }
     
-    public void setClass(XMEDocumentsMulti foTrans){
+    public void setClass(DocumentsMulti foTrans){
         this.poTrans= foTrans;
     }
      
@@ -563,7 +563,7 @@ public class MultipleDocsScannerController implements Initializable {
                         if(poTrans.deleteImage(pos)==true){
                             poTrans.deleteMasterFile(pos);
                             ShowMessageFX.Information(null, pxeModuleName, "Successfully Deleted!");
-                            reloadImage(pos+1);
+                            reloadImage(pos-1);
                         }else{
                             ShowMessageFX.Warning(null, pxeModuleName, "Unable to delete image!");
                         }
@@ -967,12 +967,15 @@ public class MultipleDocsScannerController implements Initializable {
         psList.clear();
         psimages.clear();
         
+        
+        
         if(poTrans.MasterFileCount() == 0) return;
             pnComboRow = Integer.valueOf(cmbFilter.getSelectionModel().getSelectedItem().getIndex01());
             pnRow = Integer.valueOf(table.getSelectionModel().getSelectedItem().getIndex01());
         
                 for (int i = 0; i <= poTrans.MasterFileCount()-1; ++i) {
                     try {
+                        System.out.println("image path added to master" + psDefaultPath+(String) poTrans.getMasterFile(i, "sFileName")+".jpg");
                         psList.add(psDefaultPath+(String) poTrans.getMasterFile(i, "sFileName")+".jpg");
                         if((int) poTrans.getMasterFile(i, "nClientNo") ==pnRow){
                             if((int) poTrans.getMasterFile(i, "nFileNoxx") == pnComboRow){
@@ -1034,6 +1037,10 @@ public class MultipleDocsScannerController implements Initializable {
      
     public void reloadImage(int fnRow){
         try{
+            
+            if (fnRow >= psList.size()){
+                fnRow = fnRow - 1;
+            }
             if(loadImage(psList.get(fnRow))==true){
                 setTableFocus(pos);
                 cmbSetFocus(fnRow);
