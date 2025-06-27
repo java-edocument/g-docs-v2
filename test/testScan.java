@@ -1,20 +1,13 @@
 
-package org.rmj.edocumentsfx.applications;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import javafx.application.Application;
 import org.rmj.appdriver.GRider;
-import org.rmj.edocumentsfx.views.Edocumentsfx;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
-public class Login {    
-    private static GRider poGRider = null;
-    
-    public void setGRider(GRider foGRider){poGRider = foGRider;}
-    
-    public static void main(String [] args){     
+public class testScan {
+    public static void main(String [] args){
         String path;
         if(System.getProperty("os.name").toLowerCase().contains("win")){
             path = "D:/GGC_Java_Systems";
@@ -47,11 +40,12 @@ public class Login {
             System.out.println(poGRider.getMessage() + poGRider.getErrMsg());
             System.exit(1);
         }
-                
-        Edocumentsfx edocs = new Edocumentsfx();
-        edocs.setGRider(poGRider);
         
-        Application.launch(edocs.getClass());
+        DocumentsMulti trans = new DocumentsMulti(poGRider, poGRider.getBranchCode(), false);
+        trans.setSourceCD("RExp");
+        if (trans.newTransaction() ==true){
+            System.out.println("bago na!");
+        }
     }
     
     private static boolean loadProperties(){
@@ -65,7 +59,7 @@ public class Login {
             System.setProperty("app.debug.mode", po_props.getProperty("app.debug.mode"));
             
             //PC Info
-            System.setProperty("computer.terminal", po_props.getProperty("computer.terminal4"));
+            System.setProperty("computer.terminal", po_props.getProperty("computer.terminal1"));
             
             return true;
         } catch (FileNotFoundException ex) {

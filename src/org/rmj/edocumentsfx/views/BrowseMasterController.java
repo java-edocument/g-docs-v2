@@ -1,6 +1,5 @@
 package org.rmj.edocumentsfx.views;
 
-import com.fujitsu.pfu.fiscn.sdk.FiscnException;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -107,11 +106,9 @@ public class BrowseMasterController implements Initializable {
             
             if (psBranchCd.equals("")) psBranchCd = poGRider.getBranchCode();
             
-            try {
-                poTrans = new XMEDocuments(poGRider ,psBranchCd, false);
-            } catch (FiscnException ex) {
-                Logger.getLogger(CRDocsController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+             poTrans = new XMEDocuments(poGRider ,psBranchCd, false);
+           
             
             pxeCurrentDate = poGRider.getServerDate();
             if (psDefaultPath.equals("")) psDefaultPath = poTrans.getDefaultPath();

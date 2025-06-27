@@ -28,7 +28,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.rmj.appdriver.agentfx.CommonUtils;
-import org.rmj.edocx.trans.agentFX.XMEDocumentsMulti;
+import org.rmj.edocx.trans.agentFX.DocumentsMulti;
 
 public class FileTyeSelectionController implements Initializable {
 
@@ -47,7 +47,7 @@ public class FileTyeSelectionController implements Initializable {
     private int pnRowTable = -1;
     private ArrayList<String> psImageList = new ArrayList<>();
     private ObservableList<ComboTableModel> docsList = FXCollections.observableArrayList();
-    private XMEDocumentsMulti poTrans;
+    private DocumentsMulti poTrans;
     private boolean isRegister;
     private int pnRow = -1;
    
@@ -65,7 +65,7 @@ public class FileTyeSelectionController implements Initializable {
     }
     
     
-    public void setClass(XMEDocumentsMulti fsClass){
+    public void setClass(DocumentsMulti fsClass){
         this.poTrans = fsClass;
     }
     

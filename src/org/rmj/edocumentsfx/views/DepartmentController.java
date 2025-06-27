@@ -1,12 +1,9 @@
 package org.rmj.edocumentsfx.views;
 
-import com.fujitsu.pfu.fiscn.sdk.FiscnException;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.beans.property.ReadOnlyBooleanPropertyBase;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
@@ -110,11 +107,8 @@ public class DepartmentController implements Initializable {
             
         if (psBranchCd.equals("")) psBranchCd = poGRider.getBranchCode();
         
-        try {
             poTrans = new XMDeptSysFile(poGRider ,psBranchCd, false);
-        } catch (FiscnException ex) {
-            Logger.getLogger(DepartmentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         
         btnAdd.setOnAction(this::cmdButton_Click);
         btnBrowse.setOnAction(this::cmdButton_Click);
